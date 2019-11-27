@@ -3,16 +3,33 @@
   <head>
     <meta charset="utf-8">
     <title>Head Title</title>
-    <link rel="stylesheet" href="{{ url_for('static',    filename='css/template.css') }}">
+    <style> 
+    body {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    }  
+  
+    logo {
+    background-color: rgb(160, 56, 230);
+    padding: 10px;
+    color: white;
+    }
+
+    h1 {
+    background-color: rgb(160, 56, 230);
+    padding: 10px;
+    color: white;
+    }
+    </style>
 </head>
   <body>
     <header>
       <div class="container">
-        <h1 class="logo">Judul</h1>
+        <h1 class="logo">LAYANAN JADWAL KERETA API</h1>
         <strong><nav>
           <ul class="menu">
-            <li><a href="{{ url_for('home') }}">Home</a></li>
-            <li><a href="{{ url_for('about') }}">About</a></li>
+            <a href="{{ url_for('home') }}">Home<br><br></a>
+            <a href="{{ url_for('about') }}">About</a>
           </ul>
         </nav></strong>
       </div>
