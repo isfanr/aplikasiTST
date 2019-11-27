@@ -2,15 +2,65 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Home</title>
+    <title>Cari Jadwal Kereta Api</title>
+    {% extends "template.html" %}
   </head>
   <body>
-    {% extends "template.html" %}
     {% block content %}
-    
-    <h1> Test</h1>
-    <p> Mencoba aplikasi</p>
-    
+    <div class="container"> 
+      <div class="label"> 
+        <label style="font-size: medium;">Pilih Kota Asal<br></label>
+      </div>
+      <div> 
+        <select name="Asal kota"> 
+          <option>Jakarta</option>
+          <option>Bandung</option>
+          <option>Surabaya</option>
+        </select>
+        <br><br>
+      </div><div class="label"> 
+        <label style="font-size: medium;">Pilih Kota Tujuan<br></label>
+      </div>
+      <div> 
+        <select name="Kota Tujuan"> 
+          <option>Jakarta</option>
+          <option>Bandung</option>
+          <option>Surabaya</option>
+        </select>
+        <br><br>
+      </div><div class="label"> 
+        <label style="font-size: medium;">Tanggal<br></label>
+      </div>
+      <div> 
+        <select name="Tanggal"> 
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+        </select>
+        <br><br>
+      </div><div class="label"> 
+        <label style="font-size: medium;">Bulan<br></label>
+      </div>
+      <div> 
+        <select name="bulan"> 
+          <option>Januari</option>
+          <option>Februari</option>
+          <option>Maret</option>
+        </select>
+        <br><br>
+      </div><div class="label"> 
+        <label style="font-size: medium;">Tahun<br></label>
+      </div>
+      <div> 
+        <select name="Tahun"> 
+          <option>2019</option>
+          <option>2020</option>
+          <option>2021</option>
+        </select>
+        <br><br>
+      </div>
+      
+    </div>
     {% endblock %}
   </body>
 </html>
