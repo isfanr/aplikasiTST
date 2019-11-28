@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>About</title>
+  </head>
+  <body>
+    {% extends "template.html" %}
+    {% block content %}
+      <div class="label" style="font-size: xx-large;">
+        Hasil Pencarian<br><br>
+      </div>
+      <div class="container">
+        <div class="table">
+          <table name="tabel hasil pencarian" style="width : 90%"> 
+            <tr class="header" style="text-align: left;">
+              <th name ="Kereta">Nama Kereta</th> <!--template jangan diganti-->
+              <th name ="Asal">Stasiun Asal</th>
+              <th name ="Berangkat">Waktu Berangkat</th>
+              <th name ="tujuan">Stasiun Tujuan</th>
+              <th name ="sampai">Waktu Tiba</th>
+            </tr>
+            <tr> 
+              <td name ="Kereta">Argo Parahyangan</td> <!--diganti data dari API-->
+              <td name ="Asal">Bandung</td>
+              <td name ="Berangkat">14.45</td>
+              <td name ="tujuan">Gambir</td>
+              <td name ="sampai">18.03</td>
+            </tr>
+            <tr> 
+              <td name ="Kereta">Argo Parahyangan</td> <!--diganti data dari API-->
+              <td name ="Asal">Gambir</td>
+              <td name ="Berangkat">08.45</td>
+              <td name ="tujuan">Bandung</td>
+              <td name ="sampai">12.01</td>
+            </tr>
+          </table>
+        </div> 
+      </div> 
+    {% endblock %}
+  </body>
+</html>
