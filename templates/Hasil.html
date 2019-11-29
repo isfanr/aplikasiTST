@@ -18,19 +18,15 @@
               <th name ="tujuan">Stasiun Tujuan</th>
               <th name ="sampai">Waktu Tiba</th>
             </tr>
+            {% for kereta in submit %}
             <tr> 
-              <td name ="Kereta">Argo Parahyangan</td> <!--diganti data dari API-->
-              <td name ="Asal">Bandung</td>
-              <td name ="Berangkat">14.45</td>
-              <td name ="tujuan">Gambir</td>
-              <td name ="sampai">18.03</td>
-            </tr>
-            <tr> 
-              <td name ="Kereta">Argo Parahyangan</td> <!--diganti data dari API-->
-              <td name ="Asal">Gambir</td>
-              <td name ="Berangkat">08.45</td>
-              <td name ="tujuan">Bandung</td>
-              <td name ="sampai">12.01</td>
+              <!-- TOLONG CEK SAMAIN VARIABLE DI DALEM [''] SAMA DI JSON -->
+              <td name ="Kereta">{{kereta['nama']}}</td>
+              <td name ="Asal">{{kereta['Asal']}}</td>
+              <td name ="Berangkat">{{kereta['Berangkat']}}</td>
+              <td name ="tujuan">{{kereta['tujuan']}}</td>
+              <td name ="sampai">{{kereta['sampai']}}</td>
+            {% endfor %}
             </tr>
           </table>
         </div> 
