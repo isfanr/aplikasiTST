@@ -7,18 +7,19 @@
   </head>
   <body>
     {% block content %}
-    <div class="container"> 
+    <article> 
+          <div class="label"> 
+            <label style="font-size: medium;">Pilih Kota Asal<br></label>
+          </div>
+          <div> 
+          <select name="Asal kota"> 
+            <option>Jakarta</option>
+            <option>Bandung</option>
+            <option>Surabaya</option>
+          </select>
+          <br><br>
+        </div>
       <div class="label"> 
-        <label style="font-size: medium;">Pilih Kota Asal<br></label>
-      </div>
-      <div> 
-        <select name="Asal kota"> 
-          <option>Jakarta</option>
-          <option>Bandung</option>
-          <option>Surabaya</option>
-        </select>
-        <br><br>
-      </div><div class="label"> 
         <label style="font-size: medium;">Pilih Kota Tujuan<br></label>
       </div>
       <div> 
@@ -28,7 +29,8 @@
           <option>Surabaya</option>
         </select>
         <br><br>
-      </div><div class="label"> 
+      </div>
+  <div class="label"> 
         <label style="font-size: medium;">Tanggal<br></label>
       </div>
       <div> 
@@ -59,7 +61,9 @@
         </select>
         <br><br>
       </div>
-      
+      <button type="button">Cari!</button>
+      <br><br>
+    </article>
     </div>
     {% endblock %}
   </body>

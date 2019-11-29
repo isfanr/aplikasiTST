@@ -7,10 +7,8 @@
   <body>
     {% extends "template.html" %}
     {% block content %}
-      <div class="label" style="font-size: xx-large;">
-        Hasil Pencarian<br><br>
-      </div>
-      <div class="container">
+      <article>
+        <h1>Hasil Pencarian</h1>
         <div class="table">
           <table name="tabel hasil pencarian" style="width : 90%"> 
             <tr class="header" style="text-align: left;">
@@ -36,7 +34,7 @@
             </tr>
           </table>
         </div> 
-      </div> 
+      </article>
     {% endblock %}
   </body>
 </html>

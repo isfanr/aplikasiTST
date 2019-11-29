@@ -1,42 +1,87 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Head Title</title>
-    <style> 
-    body {
-    font-family: 'Montserrat', sans-serif;
-    text-align: center;
-    }  
-  
-    logo {
-    background-color: rgb(160, 56, 230);
-    padding: 10px;
-    color: white;
-    }
+<html lang="en">
+<head>
+<title>Head Title</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
 
-    h1 {
-    background-color: rgb(160, 56, 230);
-    padding: 10px;
-    color: white;
-    }
-    </style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Style the header */
+header {
+  background-color: #0968c6;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+  color: white;
+}
+
+/* Create two columns/boxes that floats next to each other */
+nav {
+  float: left;
+  width: 30%;
+  background: #ffffff;
+  padding: 20px;
+}
+
+/* Style the list inside the menu */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+article {
+  float: left;
+  padding: 20px;
+  width: 70%;
+  background-color: #ffffff;
+}
+
+/* Clear floats after the columns */
+section:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the footer */
+footer {
+  background-color: #0968c6;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+
+</style>
 </head>
-  <body>
-    <header>
-      <div class="container">
-        <h1 class="logo">LAYANAN JADWAL KERETA API</h1>
-        <strong><nav>
-          <ul class="menu">
-            <a href="{{ url_for('home') }}">Home<br><br></a>
-            <a href="{{ url_for('about') }}">About</a>
-          </ul>
-        </nav></strong>
-      </div>
-    </header>
-    
-{% block content %}
-{% endblock %}
+<body>
+<header>
+  <h2>Layanan Jadwal Kereta Api</h2>
+</header>
 
- </body>
+<section>
+  <nav>
+    <ul>
+      <li><a href="{{ url_for('home') }}">Home</a></li>
+      <br>
+      <li><a href="{{ url_for('about') }}">About</a></li>
+    </ul>
+  </nav>
+  
+  {% block content %}
+  {% endblock %}
+</section>
+
+<footer>
+  <p>Yudhistira Qasthari Putra - 18217003</p>
+  <p>Muhammad Isfan Rahadi - 18217019</p>
+</footer>
+
+</body>
 </html>
