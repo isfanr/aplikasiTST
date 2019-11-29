@@ -5,6 +5,7 @@ End point API Tempat: http://localhost:4000/
 End point Aplikasi: http://localhost:5000/
 
 Python yang dipakai: 3.6.6
+
 Bahasa frontend: HTML
 
 How to run:
