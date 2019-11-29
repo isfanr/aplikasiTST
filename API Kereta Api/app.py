@@ -10,7 +10,7 @@ pegi2 = "www.pegipegi.com/kereta-api/search/direct/"
 
 @app.route('/')
 def test(): 
-	return 'JANCOK' 
+	return 'test' 
 
 @app.route('/test')
 def cek() :
