@@ -8,11 +8,12 @@
   <body>
     {% block content %}
     <article> 
+      <form>
           <div class="label"> 
             <label style="font-size: medium;">Pilih Kota Asal<br></label>
           </div>
           <div> 
-          <select name="Asal kota"> 
+          <select name="dept"> 
             {% for city in kota %}
               <option value="{{id}}">{{city['nama']}}</option>
               <!-- //id dari value yang lu dapetin ini nanti lu ganti ke dept
@@ -25,7 +26,7 @@
         <label style="font-size: medium;">Pilih Kota Tujuan<br></label>
       </div>
       <div> 
-        <select name="Kota Tujuan"> 
+        <select name="dest"> 
            {% for city in kota %}
             <option value="{{id}}">{{city['nama']}}</option>
             <!-- //id dari value yang lu dapetin ini nanti lu ganti ke dest
@@ -105,9 +106,9 @@
         </select>
         <br><br>
       </div>
+      <!-- <a href="{{ url_for('hasil') }}"><input type="submit" value="Submit"></a> -->
+    </form>
       <a href="{{ url_for('hasil') }}"><button type="button">Cari!</button></a>
-      <!-- //ini cara lu pindah ke page hasil cuma edit apa yang diinginkan di route bukan di sini -->
-      <br><br>
     </article>
     </div>
     {% endblock %}
