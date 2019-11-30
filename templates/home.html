@@ -8,16 +8,14 @@
   <body>
     {% block content %}
     <article> 
-      <form>
+      <form method="get" action="{{ url_for('hasil') }}"">
           <div class="label"> 
             <label style="font-size: medium;">Pilih Kota Asal<br></label>
           </div>
           <div> 
           <select name="dept"> 
             {% for city in kota %}
-              <option value="{{id}}">{{city['nama']}}</option>
-              <!-- //id dari value yang lu dapetin ini nanti lu ganti ke dept
-              //liat id kota nya di sini https://wiki-region-api.herokuapp.com/id/city/32 -->
+              <option value="{{city['nama']}}">{{city['nama']}}</option>
             {% endfor %}
           </select>
           <br><br>
@@ -28,9 +26,7 @@
       <div> 
         <select name="dest"> 
            {% for city in kota %}
-            <option value="{{id}}">{{city['nama']}}</option>
-            <!-- //id dari value yang lu dapetin ini nanti lu ganti ke dest
-            //liat id kota nya di sini https://wiki-region-api.herokuapp.com/id/city/32 -->
+            <option value="{{city['nama']}}">{{city['nama']}}</option>
           {% endfor %}
         </select>
         <br><br>
@@ -106,9 +102,10 @@
         </select>
         <br><br>
       </div>
-      <!-- <a href="{{ url_for('hasil') }}"><input type="submit" value="Submit"></a> -->
+      <div class="control">
+          <button type="submit" class="button is-link">Cari</button>
+        </div>
     </form>
-      <a href="{{ url_for('hasil') }}"><button type="button">Cari!</button></a>
     </article>
     </div>
     {% endblock %}

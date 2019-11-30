@@ -33,7 +33,7 @@ def getKereta():
 		_tujuan = request.args.get('dest')
 		_tanggal = request.args.get('date')
 			
-		if _asal == None or _tujuan == None or _tanggal == None: 
+		if _asal == '' or _tujuan == '' or _tanggal == '': 
 			return(Response('Parameter tidak tepat', 400))
 			
 		_url = requests.get('https://' + pegi2 + _asal + '/' + _tujuan + '/' + _tanggal + '/1/0/EBK')
