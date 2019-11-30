@@ -1,8 +1,0 @@
-# Environments
-venv/
-config.py
-__pycache__
-
-# Flask stuff:
-instance/
-.webassets-cache
