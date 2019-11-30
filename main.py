@@ -16,7 +16,11 @@ def about():
 @app.route("/hasil")
 def hasil():
     #API kereta api
-    data = requests.get('http://localhost:3000/....').json() #itu harusnya endpoint yang lu harapkan
+    asal = "BD" #ini harusnya diisi sama kode stasiun yang ditranslate dari daerah (dinamis)
+    tujuan = "GMR" #ini harusnya diisi sama kode stasiun yang ditranslate dari daerah (dinamis)
+    tanggal = "05-12-2019" #ini harusnya diisi sama penggabungan tanggal hari tahun di laman home (dinamis)
+    
+    data = requests.get('http://localhost:3000/kereta?dept=' + asal + '&dest=' + tujuan + '&date=' + tanggal').json() #itu harusnya endpoint yang lu harapkan
     return render_template("hasil.html", submit = data)
 
 if __name__ == "__main__":
