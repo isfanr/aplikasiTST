@@ -60,7 +60,7 @@ def getKereta():
 				
 				_td2 = _tr.find('td', attrs = {'class' : 'td2'})
 				if _td2.find('div', attrs = {'class' : 'item-title'}) :
-					_key = "Waktu berankat" 
+					_key = "Waktu berangkat" 
 					_value = _td2.find('div', attrs = {'class' : 'item-title'}).string
 				_temp[_key] = _value
 				
