@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup
 import codecs
 
 app = Flask(__name__)
-pegi2 = "www.pegipegi.com/kereta-api/search/direct/"
+tiketcom = "https://www.tiket.com/kereta-api/cari?d="
 
 
 @app.route('/')
@@ -14,88 +14,85 @@ def test():
 
 @app.route('/test')
 def cek() :
-	_url = requests.get('https://www.pegipegi.com/kereta-api/search/direct/GMR/BD/28-11-2019/1/0/EBK')
+	_url = requests.get('https://www.tiket.com/kereta-api/cari?d=JAKARTA&dt=CITY&a=BANDUNG&at=CITY&date=2019-12-02&adult=1&infant=0')
 		
 	_textdata = BeautifulSoup(_url.text, 'html.parser')
 	
 	
 	return jsonify(_textdata)
 	
-#@app.route('/kereta/<dept>/<dest>/<date>')
+
 @app.route('/kereta')
-#def getKereta(dept, dest, date):
 def getKereta():
 	try:
-		"""_asal = dept 
-		_tujuan = dest
-		_tanggal = date"""
 		_asal = request.args.get('dept') 
 		_tujuan = request.args.get('dest')
 		_tanggal = request.args.get('date')
 			
-		if _asal == '' or _tujuan == '' or _tanggal == '': 
+		if _asal == None or _tujuan == None or _tanggal == None: 
 			return(Response('Parameter tidak tepat', 400))
 			
-		_url = requests.get('https://' + pegi2 + _asal + '/' + _tujuan + '/' + _tanggal + '/1/0/EBK')
+		_url = requests.get(tiketcom + _asal + '&dt=CITY&a=' + _tujuan + '&at=CITY&date=' + _tanggal + '&adult=1&infant=0')
 		
 		_textdata = BeautifulSoup(_url.text, 'html.parser')
 		
-		"""_error = _textdata.find('tr', attrs = {'class' : 'odd'})
-		
-		if _error:
-			return(Response('Kereta tidak ditemukan', 404))"""
-			
-		
-		_element = _textdata.find('tbody', attrs = {'class' : 'searchResultBody detailOrder active'})
+		_element = _textdata.find('tbody', attrs = {'id' : 'tbody_depart'})
 		_traindata = []
 		_temp = {}
-		_num = 0
 
-		for _tr in _element.find_all('tr'):
-			if _tr.find('td', attrs = {'class' : 'column namaKelasKereta'}) :
-				if _tr.find('div', attrs = {'class' : 'namaKereta'}) :
-					_key = "nama kereta" + str(_num)
-					_value = _tr.find('div', attrs = {'class' : 'namaKereta'}).string
+		for _tr in _element.find_all('tr', attrs = {'class' : 'item-list'}):
+
+			if _tr.find('td', attrs = {'class' : 'td1'}) :
+
+				_td1 = _tr.find('td', attrs = {'class' : 'td1'})
+				if _td1.find('div', attrs = {'class' : 'item-title item-title-16'}) :
+					_key = "nama kereta" 
+					_value = _td1.find('div', attrs = {'class' : 'item-title item-title-16'}).string
 				_temp[_key] = _value
 				
-				if _tr.find('div', attrs = {'class' : 'kelasKereta'}) :
-					_key = "Kelas" + str(_num)
-					_value = _tr.find('div', attrs = {'class' : 'kelasKereta'}).string
+				if _td1.find('div', attrs = {'class' : 'item-desc'}) :
+					_key = "Kelas" 
+					_value = _td1.find('span').string
 				_temp[_key] = _value
 				
-			if _tr.find('td', attrs = {'class' : 'column keretaBerangkat'}) :
-				if _tr.find('div', attrs = {'class' : 'time'}) :
-					_key = "Waktu berankat" + str(_num)
-					_value = _tr.find('div', attrs = {'class' : 'time'}).string
+
+			if _tr.find('td', attrs = {'class' : 'td2'}) :
+				
+				_td2 = _tr.find('td', attrs = {'class' : 'td2'})
+				if _td2.find('div', attrs = {'class' : 'item-title'}) :
+					_key = "Waktu berankat" 
+					_value = _td2.find('div', attrs = {'class' : 'item-title'}).string
 				_temp[_key] = _value
 				
-				if _tr.find('div', attrs = {'class' : 'destiny origresult'}) :
-					_key = "Stasiun asal" + str(_num)
-					_value = _tr.find('div', attrs = {'class' : 'destiny origresult'}).string
+				if _td2.find('div', attrs = {'class' : 'item-desc'}) :
+					_key = "Stasiun asal" 
+					_value = _td2.find('div', attrs = {'class' : 'item-desc'}).string
 				_temp[_key] = _value
 			
-			if _tr.find('td', attrs = {'class' : 'column keretaTiba'}) :
-				if _tr.find('div', attrs = {'class' : 'time'}) :
-					_key = "Waktu tiba" + str(_num)
-					_value = _tr.find('div', attrs = {'class' : 'time'}).string
+
+			if _tr.find('td', attrs = {'class' : 'td3'}) :
+				
+				_td3 = _tr.find('td', attrs = {'class' : 'td3'})
+				if _td3.find('div', attrs = {'class' : 'item-title'}) :
+					_key = "Waktu tiba" 
+					_value = _td3.find('div', attrs = {'class' : 'item-title'}).string
 				_temp[_key] = _value
 				
-				if _tr.find('div', attrs = {'class' : 'destiny desresult'}) :
-					_key = "Stasiun Tujuan" + str(_num)
-					_value = _tr.find('div', attrs = {'class' : 'destiny desresult'}).string
+				if _td3.find('div', attrs = {'class' : 'item-desc'}) :
+					_key = "Stasiun tujuan" 
+					_value = _td3.find('div', attrs = {'class' : 'item-desc'}).string
 				_temp[_key] = _value
 				
 			_traindata.append(_temp.copy())
-			for key in _temp: 
-				del _temp[key]
-			_num += 1
+			_temp.clear()
+			
 		return jsonify(_traindata)
 		
 	except Exception as e:
 		raise e
 		
 if __name__ == '__main__': 
-	app.run(port = 3000)
+	app.run(threaded = True, port = 3000)
 			
 		
 		
