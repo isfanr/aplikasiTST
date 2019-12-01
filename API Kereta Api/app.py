@@ -29,7 +29,7 @@ def getKereta():
 		_tujuan = request.args.get('dest')
 		_tanggal = request.args.get('date')
 			
-		if _asal == None or _tujuan == None or _tanggal == None: 
+		if _asal == '' or _tujuan == '' or _tanggal == '': 
 			return(Response('Parameter tidak tepat', 400))
 			
 		_url = requests.get(tiketcom + _asal + '&dt=CITY&a=' + _tujuan + '&at=CITY&date=' + _tanggal + '&adult=1&infant=0')
