@@ -120,7 +120,7 @@ def hasil():
     tgl = request.args.get('Tanggal')
     bln = request.args.get('Bulan')
     thn = request.args.get('Tahun')
-    data = requests.get('http://localhost:3000/kereta?dept=' + asal + '&dest=' + tujuan + '&date=' + thn + '-' + bln + '-' + tgl).json()
+    data = requests.get('http://kereta-api.herokuapp.com/kereta?dept=' + asal + '&dest=' + tujuan + '&date=' + thn + '-' + bln + '-' + tgl).json()
     return render_template("hasil.html", submit = data)
 
 if __name__ == "__main__":
