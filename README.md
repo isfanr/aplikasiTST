@@ -10,11 +10,15 @@ End point API Tempat: https://wiki-region-api.herokuapp.com/
 
 End point Aplikasi: http://layanankereta.herokuapp.com/
 
+--------------------------------------
+
 Note: 
 
 Deploy berhasil dilakukan namun data web yang dicrawl (tiket.com) diprotect oleh Cloudflare.
 Sehingga apabila dilakukan crawl pada web app yang sudah dideploy terjadi internal server error.
 Apabila dilakukan crawl secara offline melalui localhost maka dapat dilakukan.
+
+---------------------------------------------------
 
 Disediakan file offline yang dapat dijalankan melalui localhost pada folder "Offline." (Worked 100%)
 
@@ -33,3 +37,10 @@ How to run:
 3. Run main.py dari aplikasiTST/Offline/
 
 4. Masuk ke end point Aplikasi
+
+------------------------------------------------------
+
+Instruction
+
+Apabila tidak muncul jadwal maka tidak ada kereta yang tersedia pada rute tersebut.
+Diharapkan memilih tanggal dalam kurun waktu 1-2 minggu terdekat dari hari ini agar terdapat jadwal kereta yang sudah ada.
