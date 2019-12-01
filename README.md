@@ -1,3 +1,9 @@
+APLIKASI LAYANAN KERETA API JAWA BARAT
+
+Yudhistira Qasthari Putra - 18217003 & Muhammad Isfan Rahadi - 18217019
+
+---------------------------------------------------------------------------
+
 End point API Kereta Api: http://api-kereta-api.herokuapp.com/
 
 End point API Tempat: https://wiki-region-api.herokuapp.com/
