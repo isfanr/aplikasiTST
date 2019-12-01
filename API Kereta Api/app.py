@@ -84,7 +84,6 @@ def getKereta():
 				_temp[_key] = _value
 				
 			_traindata.append(_temp.copy())
-			_temp.clear()
 			
 		return jsonify(_traindata)
 		
