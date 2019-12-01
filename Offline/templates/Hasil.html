@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Hasil</title>
+  </head>
+  <body>
+    {% extends "template.html" %}
+    {% block content %}
+      <article>
+        <h1>Hasil Pencarian</h1>
+        <div class="table">
+          <table name="tabel hasil pencarian" style="width : 90%"> 
+            <tr class="header" style="text-align: left;">
+              <th name ="Kereta">Nama Kereta</th> <!--template jangan diganti-->
+              <th name ="Asal">Stasiun Asal</th>
+              <th name ="Berangkat">Waktu Berangkat</th>
+              <th name ="tujuan">Stasiun Tujuan</th>
+              <th name ="sampai">Waktu Tiba</th>
+            </tr>
+            {% for kereta in submit %}
+            <tr> 
+              <!-- TOLONG CEK SAMAIN VARIABLE DI DALEM [''] SAMA DI JSON -->
+              <td name ="Kereta">{{kereta['nama kereta']}}</td>
+              <td name ="Asal">{{kereta['Stasiun asal']}}</td>
+              <td name ="Berangkat">{{kereta['Waktu berangkat']}}</td>
+              <td name ="tujuan">{{kereta['Stasiun tujuan']}}</td>
+              <td name ="sampai">{{kereta['Waktu tiba']}}</td>
+            {% endfor %}
+            </tr>
+          </table>
+        </div> 
+      </article>
+    {% endblock %}
+  </body>
+</html>
