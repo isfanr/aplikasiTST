@@ -18,37 +18,41 @@ def hasil():
     #API kereta api
     
     asal = request.args.get('dept')
-    if asal == 'Kota Bandung':
-        asal = 'BD'
+    if asal == "Kota Bandung":
+        asal = "BANDUNG"
     elif asal == 'Kab. Bandung':
-        asal = 'CCL'
+        asal = 'BANDUNG'
     elif asal == 'Kab. Bandung Barat':
-        asal = 'PDL'
+        asal = 'BANDUNG'
     elif asal == 'Kota Sukabumi':
-        asal = 'SI'
+        asal = 'SUKABUMI'
     elif asal == 'Kab. Sukabumi':
-        asal = 'CBD'
+        asal = 'SUKABUMI'
+    elif asal == 'Kota Cirebon':
+        asal = 'CIREBON'
     else:
         asal = 'XXX' #kereta tidak terdaftar
     
     tujuan = request.args.get('dest')
     if tujuan == 'Kota Bandung':
-        tujuan = 'BD'
+        tujuan = 'BANDUNG'
     elif tujuan == 'Kab. Bandung':
-        tujuan = 'CCL'
+        tujuan = 'BANDUNG'
     elif tujuan == 'Kab. Bandung Barat':
-        tujuan = 'PDL'
+        tujuan = 'BANDUNG'
     elif tujuan == 'Kota Sukabumi':
-        tujuan = 'SI'
+        tujuan = 'SUKABUMI'
     elif tujuan == 'Kab. Sukabumi':
-        tujuan = 'CBD'
+        tujuan = 'SUKABUMI'
+    elif asal == "Kota Cirebon":
+        asal = "CIREBON"
     else:
         tujuan = 'XXX' #kereta tidak terdaftar
 
     tgl = request.args.get('Tanggal')
     bln = request.args.get('Bulan')
     thn = request.args.get('Tahun')
-    data = requests.get('http://localhost:3000/kereta?dept=' + asal + '&dest=' + tujuan + '&date=' + tgl + '-' + bln + '-' + thn).json()
+    data = requests.get('http://localhost:8080/kereta?dept=' + asal + '&dest=' + tujuan + '&date=' + thn + '-' + bln + '-' + tgl).json()
     return render_template("hasil.html", submit = data)
 
 if __name__ == "__main__":
