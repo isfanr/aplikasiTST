@@ -13,20 +13,23 @@ URL Aplikasi: http://layanankereta.herokuapp.com/
 
 --------------------------------------
 
-Endpoint API Kereta Api : 
-'/kereta' 
+Endpoint API Kereta Api : '/kereta' 
+
 Menggunakan query masukan yaitu : 
-  dept = kota asal (Uppercase)
-  dest = kota tujuan (Uppercase)
-  date = tanggal (yyyy-mm-dd) 
+
+dept = kota asal (Uppercase)
+
+dest = kota tujuan (Uppercase)
+
+date = tanggal (yyyy-mm-dd) 
 
 contoh : /kereta?dept=BANDUNG&dest=CIREBON&date=2019-12-06
  
-Endpoint API Tempat: 
-'/id/city/<idprovinsi>' 
-id provinsi merupakan integer
+Endpoint API Tempat: '/id/city/{idprovinsi}' 
 
-contoh : '/id/city/32'
+ID provinsi merupakan integer
+
+contoh : '/id/city/32' (32 adalah ID Jawa Barat)
 
 ----------------------------------------------------------
 
