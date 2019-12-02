@@ -5,13 +5,30 @@ Muhammad Isfan Rahadi - 18217019
 
 ---------------------------------------------------------------------------
 
-End point API Kereta Api: http://api-kereta-api.herokuapp.com/
+URL API Kereta Api: http://api-kereta-api.herokuapp.com/
 
-End point API Tempat: https://wiki-region-api.herokuapp.com/
+URL API Tempat: https://wiki-region-api.herokuapp.com/
 
-End point Aplikasi: http://layanankereta.herokuapp.com/
+URL Aplikasi: http://layanankereta.herokuapp.com/
 
 --------------------------------------
+
+Endpoint API Kereta Api : 
+'/kereta' 
+Menggunakan query masukan yaitu : 
+  dept = kota asal (Uppercase)
+  dest = kota tujuan (Uppercase)
+  date = tanggal (yyyy-mm-dd) 
+
+contoh : /kereta?dept=BANDUNG&dest=CIREBON&date=2019-12-06
+ 
+Endpoint API Tempat: 
+'/id/city/<idprovinsi>' 
+id provinsi merupakan integer
+
+contoh : '/id/city/32'
+
+----------------------------------------------------------
 
 Note: 
 
