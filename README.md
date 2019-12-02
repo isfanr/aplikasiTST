@@ -1,6 +1,7 @@
 APLIKASI LAYANAN KERETA API JAWA BARAT
 
-Yudhistira Qasthari Putra - 18217003 & Muhammad Isfan Rahadi - 18217019
+Yudhistira Qasthari Putra - 18217003 
+Muhammad Isfan Rahadi - 18217019
 
 ---------------------------------------------------------------------------
 
