@@ -43,11 +43,11 @@ Apabila dilakukan crawl secara offline melalui localhost maka dapat dilakukan.
 
 Disediakan file offline yang dapat dijalankan melalui localhost pada folder "Offline." (Worked 100%)
 
-End point API Kereta Api: http://localhost:3000/
+Endpoint API Kereta Api: http://localhost:3000/
 
-End point API Tempat: http://localhost:4000/
+Endpoint API Tempat: http://localhost:4000/
 
-End point Aplikasi: http://localhost:5000/
+Endpoint Aplikasi: http://localhost:5000/
 
 How to run:
 
@@ -57,7 +57,7 @@ How to run:
 
 3. Run main.py dari aplikasiTST/Offline/
 
-4. Masuk ke end point Aplikasi
+4. Masuk ke endpoint Aplikasi
 
 ------------------------------------------------------
 
